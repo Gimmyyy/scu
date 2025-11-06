@@ -1,0 +1,1378 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gianmarco Luciano - Candidato Delegato Regionale SCU</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ========== VARIABILI CSS ========== */
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --accent-color: #2563eb;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f9fafb;
+            --white: #ffffff;
+            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-hover: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 20px 50px rgba(0, 0, 0, 0.2);
+            --instagram-gradient: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+        }
+
+        /* ========== RESET ========== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+            cursor: default;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* ========== CURSORE PERSONALIZZATO - ATTUALMENTE DISATTIVATO NON MI PIACE ========== 
+        .custom-cursor {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--primary-color);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: all 0.1s ease;
+            transform: translate(-50%, -50%);
+            display: none;
+        }
+
+        .custom-cursor.active {
+            transform: translate(-50%, -50%) scale(1.5);
+            background: rgba(37, 99, 235, 0.2);
+        }  
+            */
+
+        /* ========== HERO SECTION ========== */
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gradient);
+            background-image: url('sfondo.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: var(--white);
+            text-align: center;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 2rem;
+            max-width: 900px;
+        }
+
+        /* ========== FOTO PROFILO CON EFFETTI ========== */
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 2rem;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid var(--white);
+            box-shadow: var(--shadow);
+            animation: fadeInScale 1s ease-out;
+            background: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        .profile-image::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            border-radius: 50%;
+            background: var(--gradient);
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .profile-image:hover::before {
+            opacity: 1;
+            animation: rotate 3s linear infinite;
+        }
+
+        .profile-image:hover {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--accent-color);
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.4s ease;
+        }
+
+        .profile-image:hover img {
+            transform: scale(1.05);
+            filter: brightness(1.1);
+        }
+
+        .profile-image i {
+            font-size: 4rem;
+            color: var(--primary-color);
+            transition: all 0.4s ease;
+        }
+
+        .profile-image:hover i {
+            transform: scale(1.2) rotate(360deg);
+            color: var(--accent-color);
+        }
+
+        /* Testo istruzioni per la foto */
+        .photo-instruction {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-top: -1rem;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+
+        .hero h1:hover {
+            transform: scale(1.05);
+            text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            opacity: 0.95;
+            transition: opacity 0.3s ease;
+        }
+
+        .subtitle:hover {
+            opacity: 1;
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            font-style: italic;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: var(--white);
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            box-shadow: var(--shadow);
+            margin: 0.5rem;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: var(--accent-color);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .cta-button:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .cta-button span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: var(--shadow-hover);
+            color: var(--white);
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            animation: bounce 2s infinite;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .scroll-indicator:hover {
+            transform: translateX(-50%) scale(1.2);
+        }
+
+        .scroll-indicator i {
+            font-size: 2rem;
+            color: var(--white);
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+
+        .scroll-indicator:hover i {
+            opacity: 1;
+        }
+
+        /* ========== CONTAINER ========== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* ========== SECTION TITLE ========== */
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--text-dark);
+            position: relative;
+            padding-bottom: 1rem;
+            cursor: default;
+            transition: all 0.3s ease;
+        }
+
+        .section-title:hover {
+            transform: scale(1.03);
+            color: var(--primary-color);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--gradient);
+            border-radius: 2px;
+            transition: width 0.3s ease;
+        }
+
+        .section-title:hover::after {
+            width: 120px;
+        }
+
+        /* ========== ABOUT SECTION ========== */
+        .about {
+            padding: 5rem 0;
+            background: var(--white);
+            position: relative;
+            z-index: 2;
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .about-content p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            text-align: justify;
+            transition: all 0.3s ease;
+            padding: 1rem;
+            border-radius: 10px;
+        }
+
+        .about-content p:hover {
+            background: var(--bg-light);
+            transform: translateX(10px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .about-content p:first-of-type {
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        /* ========== PROGRAM SECTION ========== */
+        .program {
+            padding: 5rem 0;
+            background: var(--bg-light);
+            position: relative;
+            z-index: 2;
+        }
+
+        .program-intro {
+            max-width: 900px;
+            margin: 0 auto 3rem;
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--text-light);
+        }
+
+        .program-list {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .program-item {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            border-left: 5px solid transparent;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .program-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .program-item:hover::before {
+            left: 100%;
+        }
+
+        .program-item:hover {
+            transform: translateX(15px) scale(1.02);
+            border-left-color: var(--primary-color);
+            box-shadow: var(--shadow-hover);
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%);
+        }
+
+        .program-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .program-item:hover h3 {
+            color: var(--secondary-color);
+            transform: translateX(5px);
+        }
+
+        .program-item h3::before {
+            content: '✓';
+            width: 40px;
+            height: 40px;
+            background: var(--gradient);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-weight: bold;
+            transition: all 0.4s ease;
+        }
+
+        .program-item:hover h3::before {
+            transform: rotate(360deg) scale(1.1);
+            background: var(--gradient-hover);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .program-item p, .program-item ul {
+            color: var(--text-light);
+            line-height: 1.8;
+            font-size: 1.05rem;
+            transition: color 0.3s ease;
+        }
+
+        .program-item:hover p,
+        .program-item:hover ul {
+            color: var(--text-dark);
+        }
+
+        .program-item ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .program-item ul li {
+            padding: 0.5rem 0;
+            padding-left: 2rem;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .program-item ul li:hover {
+            padding-left: 2.5rem;
+            color: var(--primary-color);
+        }
+
+        .program-item ul li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .program-item ul li:hover::before {
+            transform: translateX(5px);
+            color: var(--primary-color);
+        }
+
+        /* ========== CONCLUSION SECTION ========== */
+        .conclusion {
+            padding: 5rem 0;
+            background: var(--white);
+            position: relative;
+            z-index: 2;
+        }
+
+        .conclusion-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .conclusion-content p {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            color: var(--text-dark);
+            margin-bottom: 2rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 1rem;
+            border-radius: 10px;
+        }
+
+        .conclusion-content p:hover {
+            background: var(--bg-light);
+            transform: scale(1.02);
+        }
+
+        .thank-you {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-top: 2rem;
+            font-weight: 700;
+            cursor: default;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .thank-you:hover {
+            transform: scale(1.1);
+            color: var(--accent-color);
+            text-shadow: 2px 2px 10px rgba(245, 158, 11, 0.3);
+        }
+
+        /* ========== CONTACT SECTION ========== */
+        .contact {
+            padding: 5rem 0;
+            background: var(--bg-light);
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-intro {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+        }
+
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact-card {
+            background: var(--white);
+            padding: 3rem 2rem;
+            border-radius: 15px;
+            text-align: center;
+            text-decoration: none;
+            color: var(--text-dark);
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(37, 99, 235, 0.1);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .contact-card:hover::before {
+            width: 400px;
+            height: 400px;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .contact-card i {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            transition: all 0.4s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-card:hover i {
+            transform: scale(1.2) rotate(10deg);
+        }
+
+        .email-card i {
+            color: var(--primary-color);
+        }
+
+        .instagram-card i {
+            background: var(--instagram-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .contact-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover h3 {
+            transform: scale(1.1);
+        }
+
+        .contact-card p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            word-break: break-all;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ========== FOOTER ========== */
+        footer {
+            background: var(--text-dark);
+            color: var(--white);
+            padding: 2rem 0;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-note {
+            margin-top: 0.5rem;
+            opacity: 0.7;
+            font-style: italic;
+            transition: opacity 0.3s ease;
+        }
+
+        footer:hover .footer-note {
+            opacity: 1;
+        }
+
+        /* ========== ANIMATIONS ========== */
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-20px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ========== EFFETTO PARTICELLE (OPZIONALE) ========== */
+        .particle {
+            position: fixed;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: float 4s ease-in-out infinite;
+            z-index: 1;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+            50% {
+                transform: translateY(-100px) rotate(180deg);
+                opacity: 1;
+            }
+        }
+
+                /* ========== RESPONSIVE DESIGN OTTIMIZZATO MOBILE ========== */
+        @media (max-width: 768px) {
+            /* Hero Section Mobile - FIX SFONDO */
+            .hero {
+                height: 100vh;
+                min-height: 600px;
+                background-attachment: scroll !important; /* Fix per mobile */
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+                line-height: 1.2;
+                padding: 0 1rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+                line-height: 1.4;
+                padding: 0 1rem;
+            }
+
+            .tagline {
+                font-size: 0.95rem;
+                padding: 0 1rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            /* Foto profilo mobile */
+            .profile-image {
+                width: 130px;
+                height: 130px;
+                margin-bottom: 1.5rem;
+            }
+
+            .profile-image i {
+                font-size: 2.5rem;
+            }
+
+            .profile-image img {
+                width: 100%;
+                height: 100%;
+            }
+
+            .photo-instruction {
+                font-size: 0.8rem;
+            }
+
+            /* Bottoni mobile - OTTIMIZZATI */
+            .cta-button {
+                padding: 12px 25px;
+                font-size: 0.95rem;
+                margin: 0.3rem;
+                display: inline-block;
+                width: auto;
+                min-width: 200px;
+            }
+
+            /* Sezioni mobile */
+            .container {
+                padding: 0 1.25rem;
+            }
+
+            .about, .program, .conclusion, .contact {
+                padding: 3rem 0;
+            }
+
+            /* Testo mobile */
+            .about-content p {
+                font-size: 1rem;
+                text-align: left;
+                padding: 0.5rem;
+                margin-bottom: 1rem;
+            }
+
+            /* Cards programma mobile */
+            .program-item {
+                padding: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .program-item h3 {
+                font-size: 1.2rem;
+                flex-wrap: wrap;
+            }
+
+            .program-item h3::before {
+                width: 35px;
+                height: 35px;
+            }
+
+            .program-item p,
+            .program-item ul {
+                font-size: 0.95rem;
+            }
+
+            .program-item ul li {
+                padding-left: 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            .program-item:hover {
+                transform: translateX(5px) scale(1);
+            }
+
+            /* Contatti mobile */
+            .contact-methods {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .contact-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .contact-card i {
+                font-size: 2.5rem;
+            }
+
+            .contact-card h3 {
+                font-size: 1.3rem;
+            }
+
+            .contact-card p {
+                font-size: 1rem;
+                word-break: break-word;
+            }
+
+            /* Conclusioni mobile */
+            .conclusion-content p {
+                font-size: 1.05rem;
+                padding: 0.5rem;
+            }
+
+            .thank-you {
+                font-size: 1.8rem;
+            }
+
+            /* Scroll indicator mobile */
+            .scroll-indicator {
+                bottom: 20px;
+            }
+
+            .scroll-indicator i {
+                font-size: 1.5rem;
+            }
+
+            /* Footer mobile */
+            footer {
+                padding: 1.5rem 0;
+            }
+
+            footer p {
+                font-size: 0.9rem;
+                padding: 0 1rem;
+            }
+
+            /* Disabilita cursore personalizzato */
+            .custom-cursor {
+                display: none !important;
+            }
+
+            /* Disabilita effetti complessi su mobile */
+            .program-item:hover::before {
+                display: none;
+            }
+
+            .profile-image:hover {
+                transform: scale(1.05);
+            }
+
+            .contact-card:hover {
+                transform: translateY(-5px) scale(1.02);
+            }
+        }
+
+        @media (max-width: 480px) {
+            /* Extra small screens */
+            .hero {
+                min-height: 550px;
+            }
+
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+
+            .subtitle {
+                font-size: 0.9rem;
+            }
+
+            .tagline {
+                font-size: 0.85rem;
+            }
+
+            .profile-image {
+                width: 110px;
+                height: 110px;
+            }
+
+            .profile-image i {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            .cta-button {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+                min-width: 180px;
+                display: block;
+                margin: 0.5rem auto;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
+            }
+
+            .about-content p {
+                font-size: 0.95rem;
+            }
+
+            .program-item {
+                padding: 1.25rem;
+            }
+
+            .program-item h3 {
+                font-size: 1.1rem;
+            }
+
+            .program-item p,
+            .program-item ul {
+                font-size: 0.9rem;
+            }
+
+            .contact-card {
+                padding: 1.75rem 1.25rem;
+            }
+
+            .thank-you {
+                font-size: 1.6rem;
+            }
+
+            .about-content p, .program-item p {
+                text-align: left;
+            }
+        }
+
+        @media (max-width: 360px) {
+            /* Very small devices */
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .subtitle {
+                font-size: 0.85rem;
+            }
+
+            .profile-image {
+                width: 100px;
+                height: 100px;
+            }
+
+            .cta-button {
+                font-size: 0.85rem;
+                padding: 10px 18px;
+                min-width: 160px;
+            }
+
+            .program-item h3 {
+                font-size: 1rem;
+            }
+
+            .program-item p,
+            .program-item ul {
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Cursore personalizzato -->
+    <div class="custom-cursor" id="customCursor"></div>
+
+    <!-- ========== HERO SECTION ========== -->
+    <section class="hero" id="home">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="profile-image" id="profileImage">
+                <!-- INSERISCI LA TUA FOTO QUI -->
+                <!-- Sostituisci le righe sotto con: <img src="tua-foto.jpg" alt="Gianmarco Luciano"> -->
+                 <img src="foto.jpg" alt="Gianmarco Luciano">
+                 <!-- <i class="fas fa-user"></i> -->
+            </div>
+            <!-- <p class="photo-instruction">✨ Passa il mouse sulla foto per un effetto sorpresa!</p> -->
+            <h1 class="fade-in">Gianmarco Luciano</h1>
+            <p class="subtitle fade-in">Candidato Delegato Regionale Servizio Civile Universale</p>
+            <p class="tagline fade-in">Insieme costruiamo un futuro migliore per gli operatori volontari</p>
+            <a href="#programma" class="cta-button"><span>Scopri il Programma</span></a>
+            <a href="#contatti" class="cta-button"><span>Contattami</span></a>
+        </div>
+        <div class="scroll-indicator" id="scrollDown">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- ========== ABOUT SECTION ========== -->
+    <section class="about" id="chi-sono">
+        <div class="container">
+            <h2 class="section-title">Chi Sono</h2>
+            <div class="about-content">
+                <p>
+                    Ciao, sono Gianmarco Luciano, se ti ritrovi a leggere quanto sto scrivendo vuol dire che sei attivamente partecipe alla vita elettorale del Servizio Civile e ritengo sia una cosa importante e fondamentale per il miglioramento di quest'esperienza che abbiamo intrapreso.
+                    Sono attualmente operatore volontario del Servizio Civile Universale e svolgo il mio servizio presso il Comune di Portici (NA) tramite l'ente Callysto Arts.
+                    Ho 22 anni e sono iscritto alla facoltà di Informatica e prossimo alla laurea triennale, da sempre cerco di occuparmi di promuovere la partecipazione attiva alle iniziative che riguardano la vita politica a livello locale. La mia partecipazione inizia dalle scuole superiori quando sono stato eletto a rappresentante di classe e successivamente candidato a rappresentante d'Istituto.
+                    Il mio obiettivo, se eletto, è quello di rappresentare gli operatori volontari nel rispetto delle regole e della trasparenza.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PROGRAM SECTION ========== -->
+    <section class="program" id="programma">
+        <div class="container">
+            <h2 class="section-title">Punti del Programma Elettorale</h2>
+            <p class="program-intro">I miei obiettivi sono semplici e ben definiti:</p>
+
+            <div class="program-list">
+                <!-- PUNTO 1 -->
+                <div class="program-item">
+                    <h3>Introduzione di Nuovi Permessi Straordinari</h3>
+                    <ul>
+                        <li><strong>Conseguimento della Patente:</strong> all'operatore volontario vengono concesse un numero di giornate pari al numero di prove che dovrà sostenere per il conseguimento della stessa.</li>
+                        <li><strong>Partecipazione a esami finali di corsi di formazione professionali:</strong> previsti dalla regione e/o da centri di formazione specializzati e riconosciuti (n.1 giornata per lo svolgimento e il conseguimento dell'attestato finale).</li>
+                        <li><strong>Partecipazione a gare sportive di rilievo nazionale ed estero:</strong> riconosciute da enti sportivi ufficiali (numero di giornate pari al numero di gare a cui l'atleta partecipa).</li>
+                        <li><strong>Congedo mestruale:</strong> all'operatrice volontaria vengono concessi giorni per congedo mestruale a seguito di certificazione medica attestante le difficoltà e l'impossibilità ai fini dello svolgimento del servizio.</li>
+                    </ul>
+                </div>
+
+                <!-- PUNTO 2 -->
+                <div class="program-item">
+                    <h3>Aumento dei Giorni di Permesso Ordinario</h3>
+                    <p>
+                        Da 20 a 24 giorni, consentendo così all'operatore volontario di poter usufruire di 2 giorni al mese.
+                    </p>
+                </div>
+
+                <!-- PUNTO 3 -->
+                <div class="program-item">
+                    <h3>Introduzione al Supporto Psicologico</h3>
+                    <p>
+                        Servizio di supporto psicologico per gli operatori volontari durante il percorso di servizio civile.
+                    </p>
+                </div>
+
+                <!-- PUNTO 4 -->
+                <div class="program-item">
+                    <h3>Iniziative per la Promozione e Informazione</h3>
+                    <p>
+                        Sul Servizio Civile Universale nei luoghi di aggregazione in collaborazione con gli istituti scolastici, atenei, enti locali e pubblica amministrazione.
+                    </p>
+                </div>
+
+                <!-- PUNTO 5 -->
+                <div class="program-item">
+                    <h3>Agevolazioni Economiche per i Trasporti</h3>
+                    <p>
+                        Biglietti e abbonamenti dei trasporti pubblici al fine di non gravare sul compenso dell'operatore volontario.
+                    </p>
+                </div>
+
+                <!-- PUNTO 6 -->
+                <div class="program-item">
+                    <h3>Incremento dell'Età per l'Accesso</h3>
+                    <p>
+                        Al Servizio Civile Universale fino al conseguimento del 30esimo anno di età (incluso).
+                    </p>
+                </div>
+
+                <!-- PUNTO 7 -->
+                <div class="program-item">
+                    <h3>Promuovere la Trasparenza e i Diritti</h3>
+                    <p>
+                        Degli operatori volontari al fine di comprendere e definire le proprie mansioni e responsabilità.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CONCLUSION SECTION ========== -->
+    <section class="conclusion" id="conclusioni">
+        <div class="container">
+            <h2 class="section-title">Conclusioni</h2>
+            <div class="conclusion-content">
+                <p>
+                    Concludo dicendo che un programma elettorale efficace deve tenere insieme diritti, qualità progettuale, integrità degli enti e di tutte le persone coinvolte.
+                    Credo fermamente che insieme potremo costruire un futuro migliore per i prossimi operatori volontari e avvalorare i nostri diritti.
+                </p>
+                <p class="thank-you">Grazie a tutti!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CONTACT SECTION ========== -->
+    <section class="contact" id="contatti">
+        <div class="container">
+            <h2 class="section-title">Contattami</h2>
+            <p class="contact-intro">Hai domande o vuoi saperne di più? Contattami sui social o via email!</p>
+
+            <div class="contact-methods">
+                <a href="mailto:gimmylu2003@gmail.com" class="contact-card email-card">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email</h3>
+                    <p>gimmylu2003@gmail.com</p>
+                </a>
+
+                <a href="https://instagram.com/gimmy.03" target="_blank" class="contact-card instagram-card">
+                    <i class="fab fa-instagram"></i>
+                    <h3>Instagram</h3>
+                    <p>@gimmy.03</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Gianmarco Luciano - Candidatura Delegato Regionale Servizio Civile Universale</p>
+            <p class="footer-note">Insieme costruiamo il futuro del servizio civile</p>
+        </div>
+    </footer>
+
+    <!-- ========== JAVASCRIPT ========== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+
+            // ========== CURSORE PERSONALIZZATO ==========
+            const cursor = document.getElementById('customCursor');
+            let mouseX = 0, mouseY = 0;
+            let cursorX = 0, cursorY = 0;
+
+            // Mostra cursore personalizzato solo su desktop
+            if (window.innerWidth > 768) {
+                cursor.style.display = 'block';
+
+                document.addEventListener('mousemove', function(e) {
+                    mouseX = e.clientX;
+                    mouseY = e.clientY;
+                });
+
+                // Animazione smooth del cursore
+                function updateCursor() {
+                    cursorX += (mouseX - cursorX) * 0.2;
+                    cursorY += (mouseY - cursorY) * 0.2;
+                    cursor.style.left = cursorX + 'px';
+                    cursor.style.top = cursorY + 'px';
+                    requestAnimationFrame(updateCursor);
+                }
+                updateCursor();
+
+                // Effetto hover su elementi cliccabili
+                const hoverElements = document.querySelectorAll('a, button, .program-item, .profile-image, h1, .section-title, .thank-you');
+                hoverElements.forEach(el => {
+                    el.addEventListener('mouseenter', () => cursor.classList.add('active'));
+                    el.addEventListener('mouseleave', () => cursor.classList.remove('active'));
+                });
+            }
+
+            // ========== SMOOTH SCROLL MIGLIORATO ==========
+            const links = document.querySelectorAll('a[href^="#"]');
+
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    const targetSection = document.querySelector(targetId);
+
+                    if (targetSection) {
+                        const offsetTop = targetSection.offsetTop - 20; // Offset per evitare sovrapposizioni
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // ========== ANIMAZIONI AL SCROLL ==========
+            const observerOptions = {
+                threshold: 0.15,
+                rootMargin: '0px 0px -100px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Applica animazione alle cards del programma
+            const programItems = document.querySelectorAll('.program-item');
+            programItems.forEach((item, index) => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(50px)';
+                item.style.transition = `all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) ${index * 0.1}s`;
+                observer.observe(item);
+            });
+
+            // ========== EFFETTO PARALLAX HERO MIGLIORATO ==========
+            let ticking = false;
+
+            window.addEventListener('scroll', function() {
+                if (!ticking) {
+                    window.requestAnimationFrame(function() {
+                        const scrolled = window.pageYOffset;
+                        const hero = document.querySelector('.hero');
+                        const scrollIndicator = document.querySelector('.scroll-indicator');
+
+                        if (hero && scrolled < window.innerHeight) {
+                            // Parallax più smooth
+                            hero.style.transform = `translateY(${scrolled * 0.3}px)`;
+                            const opacity = 1 - (scrolled / window.innerHeight) * 1.2;
+                            hero.style.opacity = Math.max(0, opacity);
+                        }
+
+                        // Nascondi scroll indicator
+                        if (scrollIndicator) {
+                            const indicatorOpacity = Math.max(0, 1 - (scrolled / 300));
+                            scrollIndicator.style.opacity = indicatorOpacity;
+                        }
+
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            });
+
+            // ========== EFFETTO CLICK SULLA FOTO ==========
+            const profileImage = document.getElementById('profileImage');
+            profileImage.addEventListener('click', function() {
+                // Effetto confetti
+                createConfetti(this);
+            });
+
+            // ========== SCROLL INDICATOR CLICK ==========
+            const scrollDown = document.getElementById('scrollDown');
+            scrollDown.addEventListener('click', function() {
+                document.querySelector('#chi-sono').scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+
+            // ========== EFFETTO CONFETTI ==========
+            function createConfetti(element) {
+                const colors = ['#667eea', '#764ba2', '#f59e0b', '#2563eb', '#10b981'];
+                const confettiCount = 30;
+                const rect = element.getBoundingClientRect();
+                const centerX = rect.left + rect.width / 2;
+                const centerY = rect.top + rect.height / 2;
+
+                for (let i = 0; i < confettiCount; i++) {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'particle';
+                    confetti.style.position = 'fixed';
+                    confetti.style.width = Math.random() * 10 + 5 + 'px';
+                    confetti.style.height = confetti.style.width;
+                    confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    confetti.style.left = centerX + 'px';
+                    confetti.style.top = centerY + 'px';
+                    confetti.style.pointerEvents = 'none';
+                    confetti.style.zIndex = '9999';
+                    document.body.appendChild(confetti);
+
+                    const angle = (Math.PI * 2 * i) / confettiCount;
+                    const velocity = Math.random() * 5 + 3;
+                    const vx = Math.cos(angle) * velocity;
+                    const vy = Math.sin(angle) * velocity;
+
+                    animateConfetti(confetti, vx, vy);
+                }
+            }
+
+            function animateConfetti(element, vx, vy) {
+                let x = 0, y = 0;
+                let opacity = 1;
+
+                function animate() {
+                    x += vx;
+                    y += vy;
+                    opacity -= 0.02;
+
+                    element.style.transform = `translate(${x}px, ${y}px) rotate(${x * 2}deg)`;
+                    element.style.opacity = opacity;
+
+                    if (opacity > 0) {
+                        requestAnimationFrame(animate);
+                    } else {
+                        element.remove();
+                    }
+                }
+                animate();
+            }
+
+            // ========== EFFETTO TYPING SUL TAGLINE ==========
+            const tagline = document.querySelector('.tagline');
+            if (tagline) {
+                const text = tagline.textContent;
+                tagline.textContent = '';
+                let charIndex = 0;
+
+                function typeWriter() {
+                    if (charIndex < text.length) {
+                        tagline.textContent += text.charAt(charIndex);
+                        charIndex++;
+                        setTimeout(typeWriter, 50);
+                    }
+                }
+
+                setTimeout(typeWriter, 1500);
+            }Q
+            // ========== ANIMAZIONE HOVER SULLE CARD ==========
+            const contactCards = document.querySelectorAll('.contact-card');
+            contactCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-15px) scale(1.05) rotate(2deg)';
+                });
+
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1) rotate(0deg)';
+                });
+            });
+
+            console.log('✅ Sito caricato con effetti avanzati!');
+            console.log('🎉 Buona campagna elettorale, Gianmarco!');
+            console.log('💡 Passa il mouse sugli elementi per vedere gli effetti!');
+        });
+    </script>
+</body>
+</html>
