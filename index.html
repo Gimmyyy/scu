@@ -1009,6 +1009,38 @@
                 font-size: 0.85rem;
             }
         }
+
+        /* ========== SEZIONE COME VOTARE (STILE SPECIFICO) ========== */
+        .how-to-vote {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            position: relative;
+            z-index: 2;
+        }
+
+        .how-to-vote .about-content p {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .how-to-vote .about-content p:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .how-to-vote .about-content code {
+            background: var(--bg-light);
+            padding: 0.3rem 0.6rem;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            color: var(--primary-color);
+            display: inline-block;
+            margin-top: 0.5rem;
+        }
     </style>
 </head>
 <body>
@@ -1020,16 +1052,13 @@
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <div class="profile-image" id="profileImage">
-                <!-- INSERISCI LA TUA FOTO QUI -->
-                <!-- Sostituisci le righe sotto con: <img src="tua-foto.jpg" alt="Gianmarco Luciano"> -->
                  <img src="foto.jpg" alt="Gianmarco Luciano">
-                 <!-- <i class="fas fa-user"></i> -->
             </div>
-            <!-- <p class="photo-instruction">✨ Passa il mouse sulla foto per un effetto sorpresa!</p> -->
             <h1 class="fade-in">Gianmarco Luciano</h1>
             <p class="subtitle fade-in">Candidato Delegato Regionale Servizio Civile Universale</p>
             <p class="tagline fade-in">Insieme costruiamo un futuro migliore per gli operatori volontari</p>
             <a href="#programma" class="cta-button"><span>Scopri il Programma</span></a>
+            <a href="#come-votare" class="cta-button"><span>Come Votare</span></a>
             <a href="#contatti" class="cta-button"><span>Contattami</span></a>
         </div>
         <div class="scroll-indicator" id="scrollDown">
@@ -1040,7 +1069,7 @@
     <!-- ========== ABOUT SECTION ========== -->
     <section class="about" id="chi-sono">
         <div class="container">
-            <h2 class="section-title">Chi Sono</h2>
+            <h2 class="section-title">Chi sono</h2>
             <div class="about-content">
                 <p>
                     Ciao, sono Gianmarco Luciano, se ti ritrovi a leggere quanto sto scrivendo vuol dire che sei attivamente partecipe alla vita elettorale del Servizio Civile e ritengo sia una cosa importante e fondamentale per il miglioramento di quest'esperienza che abbiamo intrapreso.<br>
@@ -1117,6 +1146,29 @@
                         Degli operatori volontari al fine di comprendere e definire le proprie mansioni e responsabilità.
                     </p>
                 </div>
+            </div>
+        </div>
+    
+    </section>
+
+    <!-- ========== SEZIONE COME VOTARE (NUOVA) ========== -->
+    <section class="how-to-vote" id="come-votare">
+        <div class="container">
+            <h2 class="section-title">Come Votare</h2>
+            <div class="about-content">
+                <p>
+                    <strong>CAMPAGNA ELETTORALE</strong><br>
+                    Il periodo compreso tra le ore <strong>12:00 del 6 novembre 2025 e il 28 novembre 2025</strong> sarà dedicato alla campagna elettorale. In questa fase, i candidati e/o i rappresentanti regionali uscenti – supportati dagli Uffici regionali del Servizio civile e di concerto con i rappresentanti nazionali - potranno organizzare delle assemblee locali finalizzate a far conoscere i candidati e i loro programmi.
+                    <br>
+                    <br>
+                    <strong>VOTAZIONI</strong><br>
+                    <strong>Dal 2 dicembre 2025 e fino alle ore 15.00 dell'11 dicembre 2025</strong> si svolgeranno le elezioni dei delegati sulla piattaforma <a href="https://evol.serviziocivile.it/">EVOL (Elezioni Volontari Online)</a>; <strong>dal 15 dicembre 2025</strong> i risultati saranno consultabili tramite la piattaforma.
+                    <br>
+                    <br>    
+                    <strong>COME VOTARE</strong><br>
+                    Accedi con le tue credenziali SPID o CIE sulla piattaforma <a href="https://evol.serviziocivile.it/">EVOL</a>, una volta effettuato l'accesso premi sulla voce <strong>"Vai alla votazione"</strong> e ti verrà mostrato un elenco in ordine alfabetico per tutti i candidati della tua regione o provincia autonoma.<br>
+                    Una volta effettuata la scelta premi sul tasto <strong>Vota</strong> e ti apparirà una finestra per la conferma. Una volta selezionato <strong>Si</strong> il tuo voto sarà inviato ed avrai così terminato la procedura!
+                </p>
             </div>
         </div>
     </section>
@@ -1369,9 +1421,8 @@
                 });
             });
 
-            console.log('✅ Sito caricato con effetti avanzati!');
-            console.log('🎉 Buona campagna elettorale, Gianmarco!');
-            console.log('💡 Passa il mouse sugli elementi per vedere gli effetti!');
+            console.log('✅ Sito caricato con successo');
+            console.log('🎉 Buona campagna elettorale!');
         });
     </script>
 </body>
